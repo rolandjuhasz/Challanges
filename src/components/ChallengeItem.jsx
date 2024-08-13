@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { ChallengesContext } from '../store/challenges-context.jsx';
 
@@ -28,7 +28,7 @@ export default function ChallengeItem({
   }
 
   return (
-    <li>
+    <motion.li layout exit={{y: -30, opacity: 0}}>
       <article className="challenge-item">
         <header>
           <img {...challenge.image} />
@@ -52,16 +52,20 @@ export default function ChallengeItem({
                 className="challenge-item-details-icon">&#9650;</motion.span>
             </button>
           </p>
-
+          <AnimatePresence>
           {isExpanded && (
-            <div>
+            <motion.div 
+              initial={{height: 0, opacity: 0}}
+              animate={{height: 'auto', opacity: 1}}
+              exit={{height: 0, opacity: 0}}>
               <p className="challenge-item-description">
                 {challenge.description}
               </p>
-            </div>
+            </motion.div>
           )}
+          </AnimatePresence>
         </div>
       </article>
-    </li>
+    </motion.li>
   );
 }
