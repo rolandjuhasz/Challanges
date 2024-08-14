@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 import cityImg from '../assets/city.jpg';
 import heroImg from '../assets/hero.png';
+import Tabs from './Tabs';
 
 export default function WelcomePage() {
 
@@ -78,7 +79,9 @@ export default function WelcomePage() {
             challenge here. It&apos;s been a transformative experience!” - Alex
             P.
           </p>
-          {/* You can add more testimonials or even a carousel for multiple testimonials */}
+        </section>
+        <section>
+          <Tabs />
         </section>
       </main>
     </>
