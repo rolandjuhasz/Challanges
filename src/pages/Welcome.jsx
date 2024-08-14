@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 import cityImg from '../assets/city.jpg';
 import heroImg from '../assets/hero.png';
-import Tabs from './Tabs';
+import Tabs from '../components/Tabs';
 
 export default function WelcomePage() {
 
