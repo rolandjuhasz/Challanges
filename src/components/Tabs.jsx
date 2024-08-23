@@ -28,8 +28,8 @@ export default function Tabs(){
                 className={active === 1 ? 'active' : ''}>Medium</button>
             <button onClick={() => handleChange(EXAMPLES[2], 2)}
                 className={active === 2 ? 'active' : ''}>Hard</button>
-            <p>{content}</p>
             </menu>
+            <p>{content}</p>
         </section>
     )
 }
